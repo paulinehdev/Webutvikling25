@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --basic-grey: #efefefef;
+    --basic-red: #6a0404;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: "Funnel Sans", sans-serif;
+    margin:0;
+}
+
+#page-container{
+    display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto auto auto auto auto;
+}
+
+#global-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    nav{
+        ul{
+            padding:0;
+            margin:0;
+            li{
+                list-style: none;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.fa-bars{
+    display: inline-block;
+}
+
+#mainlogo{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+    color: black;
+    }
+
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+    a:hover,
+    a:focus{
+        text-decoration: underline;
+        outline-offset: 2px;
+    }
+
+    /*HERO-section*/
+    .deal-section{
+        background-image: url("https://picsum.photos/seed/picsum/800/500");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        background-color:var(--basic-grey);
+        padding: 1rem;
+        position: relative;
+        height: 50vh;
+        min-height: 200px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 2;
+        grid-row-end: 3;
+       /* grid-area: hero; */
+
+    
+       /* img{
+            width: 100%;
+        }
+
+        h2, p, a{
+            position: absolute;
+        }
+
+        p{
+            top: 63px;
+        }
+
+        a{
+            top: 160px;
+        }
+            */
+    }
+
+    main{
+        max-width: 1200px;
+        width: 100%;
+        margin: 1rem auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 3;
+        grid-row-end: 4;
+
+        section {
+            h2{
+                text-align: center;
+            }
+            article{
+                margin: 0 auto;
+            }
+        }
+    }
+
+    
+
+    /*Luft på top og bottom ved å bruke 0*/
+    article{
+        margin: 1rem 0;
+        border:1px solid #efefef;
+        width: 31%;
+        min-width: 250px;
+        padding: 1rem;
+        flex-grow: 1;
+        max-width: 800px;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .category-card{
+        width: 33%;
+        flex-grow: 1;
+    }
+
+    
+
+    .btn{
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem;
+        border: none;
+    }
+    .btn:hover,
+    .btn:focus{
+        filter: brightness(1.1);
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+
+    .side-container{
+        background-color: var(--basic-grey);
+        padding: 1rem;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 4;
+        grid-row-end: 5;
+
+        form{
+            input{
+                display: block;
+                padding: 1rem;
+                margin: 0.4rem 0;
+            }
+        }
+    }
+
+    .age-check{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer{
+        background-color: #212324;
+        color: #fff;
+        padding: 1rem;
+        min-height: 150px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    @media only screen and (min-width: 600px){
+        #page-container{
+            grid-template-columns: 1fr 1fr 0.5fr;
+            grid-template-rows: repeat(4, auto);
+           /* grid-template-areas: "header header header"
+                                 "hero hero hero"
+                                 "main main aside"
+                                 "footer footer footer";
+
+            grid-template-columns: 1fr 1fr 0.5fr; */                        
+        }
+
+        #global-header{
+            grid-column-end: 4;
+        }
+
+        .fa-bars{
+            display: none;
+        }
+
+        .deal-section{
+            grid-column-end: 4;
+        }
+
+        main{
+            grid-column-end: 3;
+        }
+
+    article{
+        margin: 1rem 0;
+        border:1px solid #efefef;
+        width: 31%;
+        min-width: 250px;
+        padding: 1rem;
+        flex-grow: 1;
+        max-width: 800px;
+    }
+
+    .category-card{
+        width: 33%;
+        flex-grow: 0;
+    }
+
+    .grow-1{
+        flex-grow: 1;
+    }
+
+    .grow-2{
+        flex-grow: 2;
+    }
+
+        .side-container{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        footer{
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+    }
+/* produktkortene faller under hverandre, i forhold til skjermformat */
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0,5rem;
+    justify-content: center;
+
+    h2{
+        width: 100%;
+    }
+    
+    article{
+        min-width: 200px !important;
+        margin: 0;
+        flex-grow: 1;
+    }
+}
+
+/*nesting*/
+section.flex-grow{
+    justify-content: flex-start;
+
+   /* article{
+        max-width: 900px;
+        min-width: 100px;
+        width: 31%;
+    }
+
+    article.grow-1{
+        flex-grow: 2;
+    } */
+} 
+
+/*.grow-1{
+    flex-grow: 2;
+}
+
+.grow-2{
+    flex-grow: 3;
+} */
+
+.fa-bars{
+    font-size: 30px;
+    color: #6a0404;
+    font-weight: 600;
+}

@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+#global-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("https://picsum.photos/seed/picsum/800/500");
+    background-size: cover;
+    min-height: 300px;
+
+    nav{
+        background-color: #fff;
+        border: 1px solid #ccc;
+        ul{
+            padding: 0;
+            li{
+                list-style: none;
+                padding: 1rem;
+            }
+        }
+
+    }
+}
+
+#mainlogo{
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main{
+    padding: 1rem;
+    article{
+        border: 1px solid #000;
+        padding: 1rem;
+        margin: 1rem 0;
+        }
+
+
+}
+
+aside{
+    padding: 1rem;
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.google-btn{
+    display: inline-block;
+    background-color: #696565;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+}
+
+footer{
+    background-color: #696565;
+    color: #fff;
+    padding: 1rem;
+    form{
+        label{
+            display: block;
+            input{
+               display: block; 
+               padding: 1rem;
+            }
+            textarea{
+                display: block;
+                padding: 1rem;
+            }
+            
+        }
+    }
+}
+
+.btn{
+    display: inline-block;
+    background-color: #fff;
+    color: #696565;
+    padding: 1rem;
+    border: none; 
+    margin-bottom: 1rem;
+}
