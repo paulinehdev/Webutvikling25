@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
     --header: #8b445c;
     --first-section: #e8dfca;
@@ -10,7 +12,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Funnel Sans", sans-serif;
     margin: 0;
     display: flex;
     min-height: 100vh;
@@ -32,9 +34,14 @@ header,section,main,footer{
 }
 
 #global-header{
+    display: flex;
+    flex-direction: column;
     background-color: var(--header);
     grid-area: header;
     nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         ul{
             list-style: none;
             li{
@@ -57,10 +64,33 @@ header,section,main,footer{
 }
 
 .first-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--first-section);
     grid-area: section;
     border-bottom: 1px solid #482c3d;
     color: #482c3d;
+
+    >*{
+        width: 50%;
+        min-width: 350px;
+        flex-grow: 1;
+    }
+
+    section{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.first-section:nth-child(even){
+    flex-direction: row-reverse;
 }
 
 
@@ -70,6 +100,37 @@ main{
     color: #482c3d;
 }
 
+#services{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+
+    h2{
+        width: 100%;
+    }
+}
+
+.service-card{
+    width: 33%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    flex-grow: 1;
+
+        i{
+            min-width: 50px;
+            min-height: 50px;
+            padding: 0.5rem;
+            border-radius: 100%;
+            border: 1px solid #482c3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 
 .btn{
     display: inline-block;
@@ -97,4 +158,76 @@ footer{
 img{
     width: 100%;
     max-width: 900px;
+}
+
+.hidden{
+    display: none;
+}
+
+.icon-btn{
+    background-color: transparent;
+    border: none;
+    i {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 789px){
+
+    #services{
+        display: flex;
+
+    }
+    .service-card{
+        max-width: 450px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #grid-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header header"
+                             "section section"
+                             "main main"
+                             "footer footer";
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    article{
+        margin: 1rem 0;
+        border:1px solid #efefef;
+        width: 31%;
+        min-width: 250px;
+        padding: 1rem;
+        flex-grow: 1;
+        max-width: 800px;
+    }
+
+    #menu{
+        ul{
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    #ham{
+        display: none;
+    }
+
+    #close{
+        display: none;
+    }
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
 }
