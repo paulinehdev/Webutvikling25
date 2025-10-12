@@ -14,7 +14,7 @@
 <body>
 
     <!--HEADER: LOGO og MENY-->
-    <div id="grid-container">
+
     
 
     <header id="global-header">
@@ -37,39 +37,40 @@
     <!--SECTION: TO PRODUKTKORT-->
     <main>
         <!--SECTION: OVERSKRIFT og KNAPP-->
-        <section class="first-section">
+        <section id="hero">
             <h2>Step into a world of nostalgia and charm! Our boutique celebrates timeless style, feminine flair, and a love for all things vintage. 
                 Discover one-of-a-kind treasures, lovingly curated to bring a touch of magic to your wardrobe. </h2>
-            <a href="offers.html" class="btn">Read more</a>
+            <a href="#" class="btn">Read more</a>
         </section>
 
-        <section class="flex-container">
-            <article>
+        <section class="highlight">
+            <figure>
                 <picture>
                     <source media="(min-width: 1400px)" srcset="img/fashion1920.jpg">
                     <source media="(min-width: 900px)" srcset="img/fashion1280.jpg">
                     <img src="img/fashion640.jpg" alt="Portrettbilde">
                 </picture>
-                <section>
+            </figure>
                     <h3>Why Vintage?</h3>
                     <p>Vintage empowers you to express yourself sustainably and boldly. 
                     Make your mark with classic garments and accessories that last a lifetime.</p>
-                </section>
-            </article>
-            <article>
+        </section>
+
+        <section class="highlight">
+            <figure>
                 <picture>
                     <source media="(min-width: 1400px)" srcset="img/handbag1920.jpg">
                     <source media="(min-width: 900px)" srcset="img/handbag1280.jpg">
                     <img src="img/handbag640.jpg" alt="Veskebilde">
                 </picture>
+            </figure>
                 <h3>Style Ispiration</h3>
                 <p>Need ideas for putting together the perfect vintage look? Explore our style guide full of playful vibes
-                     and creative outfit combinations. Spark inspiration and make every day a little more magical</p>
-            </article>
+                    and creative outfit combinations. Spark inspiration and make every day a little more magical</p>
         </section>
 
         <!--SECTION: TRE ARTIKLER-->
-        <section class="services">
+        <section id="services">
             <h2>Our Services</h2>
             <article id="service-card">
                 <i class="fa-solid fa-chart-simple"></i>
@@ -99,8 +100,6 @@
     <footer>
         <p>Footer</p>
     </footer>
-
-    </div>
 
     <script src="js/script.js"></script>
 </body>

@@ -14,34 +14,29 @@
 body{
     font-family: "Funnel Sans", sans-serif;
     margin: 0;
-    display: flex;
-    min-height: 100vh;
-    font-size: 1rem;
 }
 
-#grid-container{
-    display: grid;
-    width: 100%;
-    height: inherit;
-    grid-template-areas: "header"
-                         "section"
-                         "main"
-                         "footer";
-}
-
-header,section,main,footer{
+a{
+    display: inline-block;
+    color:#e8dfca;
+    text-decoration: none;
     padding: 1rem;
+}
+
+img{
+    width: 100%;
 }
 
 #global-header{
     display: flex;
     flex-direction: column;
     background-color: var(--header);
-    grid-area: header;
+    
     nav{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 1rem;
         ul{
             list-style: none;
             li{
@@ -63,13 +58,21 @@ header,section,main,footer{
 
 }
 
-.first-section{
+#hero{
+    min-height: 300px;
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
+    padding: 1rem;
     justify-content: center;
+    background-color: #e8dfca;
+}
+
+.highlight{
+    display: flex;
+    padding: 0rem;
+    flex-wrap: wrap;
     background-color: var(--first-section);
-    grid-area: section;
     border-bottom: 1px solid #482c3d;
     color: #482c3d;
 
@@ -79,17 +82,24 @@ header,section,main,footer{
         flex-grow: 1;
     }
 
+    figure{
+        margin: 0;
+        img{
+            height: 100%;
+        }
+    }
+
     section{
         padding: 1rem;
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        align-content: center;
     }
 }
 
-.first-section:nth-child(even){
+
+
+.highlight:nth-child(even){
     flex-direction: row-reverse;
 }
 
@@ -105,6 +115,7 @@ main{
     flex-wrap: wrap;
     padding: 1rem;
     justify-content: center;
+    background-color: #e8dfca;
 
     h2{
         width: 100%;
@@ -133,20 +144,40 @@ main{
     }
 
 .btn{
-    display: inline-block;
     background-color: #482c3d;
     color: #fff;
     padding: 1rem;
-    border: none;
-    text-decoration: none;
+    border-radius: 10px;
 }
 
-.btn:hover,
+.hidden{
+    display: none;
+}
+
+#menu{
+    list-style: none;
+    margin: 0;
+
+    li:first-child{
+        top: 20px;
+        right: 20px;
+        position: absolute;
+    }
+}
+
+#close{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*.btn:hover,
 .btn:focus{
     filter: brightness(1.1);
     outline: 2px solid currentColor;        
     outline-offset: 2px;
-    }
+    } */
 
 
 footer{
@@ -155,14 +186,7 @@ footer{
     color: #e8dfca;
 }
 
-img{
-    width: 100%;
-    max-width: 900px;
-}
 
-.hidden{
-    display: none;
-}
 
 .icon-btn{
     background-color: transparent;
@@ -175,7 +199,9 @@ img{
 @media only screen and (min-width: 789px){
 
     #services{
-        display: flex;
+        h2{
+            text-align: center;
+        }
 
     }
     .service-card{
@@ -185,34 +211,40 @@ img{
     }
 }
 
-@media only screen and (min-width: 600px){
-    #grid-container{
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "header header"
-                             "section section"
-                             "main main"
-                             "footer footer";
+@media only screen and (max-width:600px){
+    #menu{
+        background-color: #482c3d;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 2rem;
     }
+}
 
+
+@media only screen and (min-width: 600px){
+   
     header{
         display: flex;
         justify-content: space-between;
     }
 
-    article{
-        margin: 1rem 0;
-        border:1px solid #efefef;
-        width: 31%;
-        min-width: 250px;
-        padding: 1rem;
-        flex-grow: 1;
-        max-width: 800px;
+    .hidden{
+        display: inline-block;
+    }
+
+    .btn:hover{
+        background-color: #482c3d;
+        color: #e8dfca;
     }
 
     #menu{
-        ul{
-            display: flex;
-            gap: 1rem;
+        display: flex;
+        gap: 1rem;
+
+        li a:hover{
+            text-decoration: underline;
         }
     }
 
@@ -223,11 +255,8 @@ img{
     #close{
         display: none;
     }
-}
 
-.flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    .group{
+        display: none;
+    }
 }
