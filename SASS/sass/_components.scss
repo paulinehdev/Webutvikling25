@@ -1,0 +1,38 @@
+@use 'colors';
+
+@mixin colorTemplate($BGcolor, $borderColor, $TextColor){
+    background-color: $BGcolor;
+    border: $borderColor;
+    color: $TextColor;
+}
+
+%box-shadow{
+    box-shadow: 10px 10px 20px colors.$lightGrey;
+}
+
+
+.card{
+    border: 1px solid colors.$lightGrey;
+    padding: 1rem;
+    flex: 1 1 calc(31% - 20px);
+    min-width: 250px;
+    border-radius: 5px;
+
+    @extend %box-shadow;
+}
+
+
+.success{
+    @extend .card;
+    @include colorTemplate(colors.$successBGcolor, colors.$successBorderColor, colors.$successTextColor);
+}
+
+.warning{
+    @extend .card;
+    @include colorTemplate(colors.$warningBGcolor, colors.$warningBorderColor, colors.$warningTextColor);
+}
+
+.error{
+    @extend .card;
+    @include colorTemplate(colors.$errorBGcolor, colors.$errorBorderColor, colors.$errorTextColor);
+}
